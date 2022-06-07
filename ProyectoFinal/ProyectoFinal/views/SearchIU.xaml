@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.SearchIU">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="30"
+                           Margin="5"
+                           Padding="5">
+                <SearchBar Placeholder="Pizza,Hamburguesas,Asados..."  TextChanged="InputView_OnTextChanged"></SearchBar>
+            </Frame>
+            <CollectionView x:Name="LVproducts">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="210" />
+                            </Grid.RowDefinitions>
+                            <Frame
+                                CornerRadius="30"
+                                IsClippedToBounds="True"
+                                Margin="10"
+                                Padding="0"
+                                WidthRequest="140">
+                                <Grid>
+                                    <Image Aspect="AspectFill" Source="{Binding image}" />
+                                    <Frame>
+                                        <Frame.Background>
+                                            <LinearGradientBrush EndPoint="0,1">
+                                                <GradientStop Color="Transparent" Offset="0.1" />
+                                                <GradientStop Color="#66615A5A" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid>
+                                            <Label
+                                                FontSize="24"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding name}"
+                                                TextColor="White"
+                                                VerticalTextAlignment="End" />
+                                            <Label
+                                                FontSize="18"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding price}"
+                                                TextColor="White"
+                                                VerticalTextAlignment="End" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

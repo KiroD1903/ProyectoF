@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:views="clr-namespace:ProyectoFinal.views;assembly=ProyectoFinal"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             x:Class="ProyectoFinal.views.HomeIU"
+             BarTextColor="Black" BarBackgroundColor="White" SelectedTabColor="MediumVioletRed"
+             UnselectedTabColor="Aqua">
+  <!--Pages can be added as references or inline-->
+    <views:ProductosIU Icon="Comida.png" Title="Inicio"/>
+    <views:SearchIU Icon="Buscar.png" Title="Busqueda"/>
+    <views:CarritoIU Icon="Carrito.png" Title="Carrito de Compras"></views:CarritoIU>
+
+</TabbedPage>

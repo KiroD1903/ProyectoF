@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.views.ProductosIU">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label
+                FontSize="18"
+                Grid.Row="0"
+                Text="Categorias" />
+                <StackLayout Grid.Row="1">
+                    <CollectionView ItemsLayout="HorizontalList" x:Name="CollectionViewCategory">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ScrollView Orientation="Horizontal">
+                                    <Frame
+                                    CornerRadius="20"
+                                    HeightRequest="80"
+                                    IsClippedToBounds="True"
+                                    Margin="5"
+                                    Padding="0"
+                                    WidthRequest="120">
+                                        <Grid>
+                                            <Image Aspect="AspectFill" Source="{Binding image}" />
+                                            <Frame Padding="10" WidthRequest="80">
+                                                <Frame.Background>
+                                                    <LinearGradientBrush EndPoint="0,1">
+                                                        <GradientStop Color="Transparent" Offset="0.1" />
+                                                        <GradientStop Color="#66615A5A" Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </Frame.Background>
+                                                <Label
+                                                FontSize="12"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding name}"
+                                                TextColor="White"
+                                                VerticalOptions="End" />
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+                                </ScrollView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <Label
+                FontSize="18"
+                Grid.Row="2"
+                Text="Productos" />
+                <CollectionView Grid.Row="3" x:Name="LVproducts">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="210" />
+                                </Grid.RowDefinitions>
+                                <Frame
+                                CornerRadius="30"
+                                IsClippedToBounds="True"
+                                Margin="10"
+                                Padding="0"
+                                WidthRequest="140">
+                                    <Grid>
+                                        <Image Aspect="AspectFill" Source="{Binding image}" />
+                                        <Frame>
+                                            <Frame.Background>
+                                                <LinearGradientBrush EndPoint="0,1">
+                                                    <GradientStop Color="Transparent" Offset="0.1" />
+                                                    <GradientStop Color="#66615A5A" Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </Frame.Background>
+                                            <Grid>
+                                                <Label
+                                                FontSize="24"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding name}"
+                                                TextColor="White"
+                                                VerticalTextAlignment="End" />
+                                                <Label
+                                                FontSize="18"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding price}"
+                                                TextColor="White"
+                                                VerticalTextAlignment="End" />
+                                            </Grid>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
